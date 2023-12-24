@@ -33,7 +33,7 @@ signForm.addEventListener('submit', (e)=>{
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
-    console.log(user.uid)
+    alert("successful registration");
     set(ref(db, 'users/' + user.uid), {
         username: fullName,
         email: email,
@@ -42,7 +42,6 @@ signForm.addEventListener('submit', (e)=>{
       .catch((e)=>{
           console.log("error", e)
       })
-    console.log(user)
     signForm.reset();
     // ...
   })
